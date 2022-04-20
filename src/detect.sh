@@ -2,7 +2,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --partition=awd
 #SBATCH --mem=16gb
-#SBATCH --time=2:20:00
+#SBATCH --time=12:00:00
 
 # Load the modules/environment
 module purge
