@@ -1,0 +1,12 @@
+UNKNOWN_RATIO=0.6
+
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_0/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_0" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=0 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_1/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_1" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=1 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_2/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_2" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=2 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_3/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_3" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=3 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_4/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_4" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=4 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_5/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_5" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=5 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_6/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_6" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=6 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_7/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_7" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=7 --dataset="OpenSetCows2020" #--softmax_enabled=1
+# python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_8/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_8" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=8 --dataset="OpenSetCows2020" #--softmax_enabled=1
+python test.py --model_path="/work/ca0513/results/CEiA/TL/06/rep_9/triplet_cnn_open_cows_best_x1.pkl" --save_path="/work/ca0513/results/CEiA/TL/06/rep_9" --unknown_ratio=$UNKNOWN_RATIO --repeat_num=9 --dataset="OpenSetCows2020" #--softmax_enabled=1

@@ -1,0 +1,52 @@
+## Mac files
+*.DS_Store
+
+*.pyc
+!**/__pycache__/
+
+*.weights
+*.pb
+
+*.npz
+*.zip
+*.pdf
+*.png
+
+.idea/
+
+# Console output from jobs
+*.stdout
+*.stderr
+
+# Detector
+src/Detector/darknet/
+src/Detector/darknet-alexeyAB/
+src/Detector/data/*
+src/Detector/output/*
+
+# Workspace
+workspace/*
+
+# Database
+src/Database/data/*
+
+# Identification stuff
+src/Identifier/data/*
+src/Identifier/EmbeddedSpace/Results
+src/Identifier/Supervised-Triplet-Network/data
+src/Identifier/Supervised-Triplet-Network/results
+
+# Datasets
+src/Datasets/data/CowID-BBC/*
+src/Datasets/data/CowID-PhD/*
+src/Datasets/data/OpenSetCows2019/raw/*
+src/Datasets/data/OpenSetCows2019/sources/*
+src/Datasets/data/OpenSetCows2019/split/*
+src/Datasets/data/RGBDCows2019/*
+
+# Labelling
+src/Labelling/data/*
+src/Labelling/IdentificationLabeller/data/*
+
+# Other bits
+other/data-test/videos/*
