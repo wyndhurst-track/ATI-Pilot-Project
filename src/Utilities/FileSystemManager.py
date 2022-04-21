@@ -3,6 +3,7 @@ import os
 import sys
 sys.path.append("../")
 from datetime import datetime
+from datetime import timedelta  
 
 # My libraries
 from config import cfg
@@ -94,6 +95,8 @@ class FileSystemManager(object):
 
 				# Extract the datetime
 				timestamp = datetime.strptime(split_filename[0], "%Y-%m-%dT%H-%M-%S")
+				offset = int(split_filename[2])
+				timestamp = timestamp + timedelta(minutes=offset)
 
 				# The camera ID is the second part of the second element
 				camera_ID = int(split_filename[1].split("-")[1])
