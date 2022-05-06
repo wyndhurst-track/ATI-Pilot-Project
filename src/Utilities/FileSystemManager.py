@@ -190,7 +190,7 @@ class FileSystemManager(object):
 		split_filename = filename.split("_")
 
 		# Join the first two elements
-		new_filename = "_".join(split_filename[:2])
+		new_filename = "_".join(split_filename[:3])
 
 		# Append the file extension
 		new_filename += f".{self.__video_extension}"

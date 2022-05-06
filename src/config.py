@@ -60,7 +60,7 @@ Database constants
 cfg.DAT = edict()
 
 # Whether to just output the data to a simple CSV file, if False it goes to a mysql database
-cfg.DAT.TO_CSV = True
+cfg.DAT.TO_CSV = False
 
 # Where to find the CSV database
 

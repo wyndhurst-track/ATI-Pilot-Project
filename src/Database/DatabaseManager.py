@@ -7,7 +7,7 @@ sys.path.append("../")
 import csv
 import datetime
 
-# import mysql.connector
+import mysql.connector
 
 # My libraries
 from config import cfg
@@ -48,9 +48,11 @@ class DatabaseManager(object):
 		else:
 			# Setup the connection to the sql server
 			self.__db = mysql.connector.connect(
-				host="localhost",
-				user="user",
-				passwd="password"
+				host="my-dbs-bp0.bristol.ac.uk",
+				user="qy18694",
+				password="Moocow21extended_",
+				port=4407,
+				database="wyndhurstfarm"
 			)
 			self.__cursor = self.__db.cursor()
 
@@ -97,18 +99,52 @@ class DatabaseManager(object):
 		else:
 			# TODO: check whether this is a duplicate entry (is this handled by SQL automatically?)
 
-			# Construct the insertion query
-			sql = f" INSERT INTO data (cam_ID, process_ID, cow_ID, cx, cy, w, h, angle, score, datetime, frame_ID, filename) \
-					 VALUES (	{cam_ID}, \
-					 			{self.__process_ID}, \
-					 			{cow_ID}, \
-					 			{cx}, {cy}, {w}, {h}, {angle}, {score}, \
-					 			{datetime}, \
-					 			{frame_ID}, \
-					 			{filename})"
+			add_values = ("INSERT INTO data " 
+						"(cam_ID, process_ID, cow_ID, cx, cy, w, h, angle, score, detect_timestamp, frame_ID, filename) "
+            			"VALUES (%(camera_ID)s, %(process_ID)s, %(cow_ID)s, %(cx)s, %(cy)s, %(w)s, %(h)s, %(angle)s, %(score)s, %(detect_timestamp)s, %(frame_ID)s, %(filename)s)")
 
-			# Actually run it
-			ret = self.__executeQuery(sql)
+			data_values = {
+				'camera_ID': int(camera_ID),
+				'process_ID': int(self.__process_ID),
+				'cow_ID': int(cow_ID),
+				'cx': float(cx),
+				'cy': float(cy),
+				'w': float(w),
+				'h': float(h),
+				'angle': float(angle),
+				'score': float(score),
+				'detect_timestamp': datetime,
+				'frame_ID': int(frame_ID),
+				'filename': filename
+			}
+
+			try:
+				self.__cursor.execute(add_values, data_values)
+				self.__db.commit()
+			except:
+				self.__logging_manager.logInfo(__file__, f"Reconnecting: Failed to record: " + str(cow_ID) + " at " + str(datetime))
+				self.__db = mysql.connector.connect(
+					host="my-dbs-bp0.bristol.ac.uk",
+					user="qy18694",
+					password="Moocow21extended_",
+					port=4407,
+					database="wyndhurstfarm"
+				)
+				self.__cursor = self.__db.cursor()
+
+
+			# # Construct the insertion query
+			# sql = f" INSERT INTO data (cam_ID, process_ID, cow_ID, cx, cy, w, h, angle, score, detect_timestamp, frame_ID, filename) \
+			# 		 VALUES (	{camera_ID}, \
+			# 		 			{self.__process_ID}, \
+			# 		 			{cow_ID}, \
+			# 		 			{cx}, {cy}, {w}, {h}, {angle}, {score}, \
+			# 		 			{datetime}, \
+			# 		 			{frame_ID}, \
+			# 		 			{filename})"
+
+			# # Actually run it
+			# ret = self.__executeQuery(sql)
 
 	def close(self):
 		""" Close database connections cleanly """
